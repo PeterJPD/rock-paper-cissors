@@ -2,10 +2,16 @@ function computerPlay(){
     let machine=Math.floor(Math.random()*3)
     return machine
 }
+const regex=/^rock$|^paper$|^scissors$/ig;
+ 
 
-let computerSelection = computerPlay()
-let playerSelection = prompt("Write your choice")
+let computerSelection = computerPlay();
+let playerSelection= prompt("Write your choice");
+let playerSelectionLower = playerSelection.toLowerCase()
+console.log(playerSelectionLower)
 //0 = rock --- 1 = paper --- 2 = scissors
+
+
 function playRound(playerSelection, computerSelection){
     if (playerSelection==="rock"){
         if (computerSelection===0){
