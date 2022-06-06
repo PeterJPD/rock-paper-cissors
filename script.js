@@ -73,9 +73,4 @@ function game(){
 
         };console.log(`The final score was ${playerCounter} points for you and ${computerCounter} points for the machine.`);
 }
-
-
-
-
-
 console.log(game())
