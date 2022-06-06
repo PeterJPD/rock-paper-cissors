@@ -1,48 +1,49 @@
 function computerPlay(){
     let machine=Math.floor(Math.random()*3)
     return machine
-}
-const regex=/^rock$|^paper$|^scissors$/ig;
- 
+} 
 
 let computerSelection = computerPlay();
-let playerSelection= prompt("Write your choice");
-let playerSelectionLower = playerSelection.toLowerCase()
-console.log(playerSelectionLower)
+let playerSelectionGeneral= prompt("Write your choice");
+let playerSelectionLower = playerSelectionGeneral.toLowerCase()
 //0 = rock --- 1 = paper --- 2 = scissors
 
-
-function playRound(playerSelection, computerSelection){
-    if (playerSelection==="rock"){
+function playRound(playerSelectionLower, computerSelection){
+    if (playerSelectionLower==="rock"){
         if (computerSelection===0){
-            console.log("Computer played rock. its a tie.");
+            return ("Computer played rock. its a tie.");
         };
         if (computerSelection===1){
-            console.log("Computer played paper. you lost.")
+            return ("Computer played paper. you lost.")
         };
         if (computerSelection===2){
-            console.log("Computer played scissors. You won")
+            return ("Computer played scissors. You won")
         };
-    }else if (playerSelection==="paper"){
+    }else if (playerSelectionLower==="paper"){
         if (computerSelection===0){
-            console.log("Computer played rock. You won.");
+            return ("Computer played rock. You won.");
         };
         if (computerSelection===1){
-            console.log("Computer played paper. Its a tie.")
+            return ("Computer played paper. Its a tie.")
         };
         if (computerSelection===2){
-            console.log("Computer played scissors. You lost")
+            return ("Computer played scissors. You lost")
         };
-    }else if (playerSelection==="scissors"){
+    }else if (playerSelectionLower==="scissors"){
         if (computerSelection===0){
-            console.log("Computer played rock. You lost.");
+            return ("Computer played rock. You lost.");
         };
         if (computerSelection===1){
-            console.log("Computer played paper. You won.")
+            return ("Computer played paper. You won.")
         };
         if (computerSelection===2){
-            console.log("Computer played scissors. Its a tie.")
+            return ("Computer played scissors. Its a tie.")
         };
     };
 };
-playRound(playerSelection, computerSelection)
+
+function game(){
+    for(let i=0; i<5; i++){
+        return playRound(playerSelectionLower, computerSelection)
+    }
+}
