@@ -3,4 +3,6 @@ function computerPlay(){
     return machine
 }
 
+let computerSelection = computerPlay()
+let playerSelection = prompt("Write your choice")
 //0 = rock --- 1 = paper --- 2 = scissors
