@@ -8,6 +8,9 @@ function computerPlay(){
     machine=Math.floor(Math.random()*3)
     return machine
 };
+
+let playerSelection= prompt("make your choice: ")
+
 function playRound(playerSelectionLower, computerSelection){
     if (playerSelectionLower==="rock"){
         if (computerSelection===0){
@@ -51,26 +54,30 @@ function playRound(playerSelectionLower, computerSelection){
         };
     };
 };
-function game(){
-    for (i = 0; i < 5; i++){
-        computerSelection = computerPlay();
-        playerSelectionGeneral= prompt("Write your choice");
-        playerSelectionLower = playerSelectionGeneral.toLowerCase();
-        result = playRound(playerSelectionLower, computerSelection)
 
-        if (winner==="tie"){
-            playerCounter+=1
-            computerCounter+=1
+console.log(playRound(playerSelection, computerPlay()))
 
-        };if(winner==="player"){
-            playerCounter+=1
 
-        };if(winner==="computer"){
-            computerCounter+=1
+// function game(){
+//     for (i = 0; i < 5; i++){
+//         computerSelection = computerPlay();
+//         playerSelectionGeneral= prompt("Write your choice");
+//         playerSelectionLower = playerSelectionGeneral.toLowerCase();
+//         result = playRound(playerSelectionLower, computerSelection)
 
-        };
-        console.log(result)
+//         if (winner==="tie"){
+//             playerCounter+=1
+//             computerCounter+=1
 
-        };console.log(`The final score was ${playerCounter} points for you and ${computerCounter} points for the machine.`);
-}
-console.log(game())
+//         };if(winner==="player"){
+//             playerCounter+=1
+
+//         };if(winner==="computer"){
+//             computerCounter+=1
+
+//         };
+//         console.log(result)
+
+//         };console.log(`The final score was ${playerCounter} points for you and ${computerCounter} points for the machine.`);
+// }
+// console.log(game())
