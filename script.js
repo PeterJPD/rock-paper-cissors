@@ -82,9 +82,12 @@ buttons.forEach((button) => {
         results.textContent = `${round} The machine score is ${computerCounter} and your score is ${playerCounter}`;
         if (playerCounter>=5){
             finalResult.textContent = "You Won!"
+            finalResult.classList.add('victory')
+            
         }
         else if(computerCounter>=5){
-            finalResult.textContent = "You loose."
+            finalResult.textContent = "You loose"
+            finalResult.classList.add('defeat')
         }
         
     })
@@ -92,3 +95,4 @@ buttons.forEach((button) => {
         button.removeEventListener('click', rpsGame());
     }
 })
+

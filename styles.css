@@ -1,0 +1,45 @@
+.jogo{
+    border: 2px solid green;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 900px;
+}
+
+.botoes{
+    border: 2px solid red;
+}
+
+.results{
+    border: 2px solid blue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+button{
+    height: 50px;
+}
+
+#rock{
+    background-color: lightsalmon;
+}
+#paper{
+    background-color: lightgray;
+}
+#scissors{
+    background-color: lightblue;
+}
+#final-result{
+    font-size: 50px;
+}
+
+.victory{
+    color: blue;
+}
+.defeat{
+    color: red;
+}
