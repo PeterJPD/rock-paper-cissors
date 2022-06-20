@@ -1,0 +1,3 @@
+1- add a reset button
+2- add a mechanism to stop the game when the final result shows up
+3- add sounds
