@@ -3,6 +3,7 @@ let playerCounter = 0
 let computerCounter = 0
 let playerSelection
 
+
 function computerPlay(){
     machine=Math.floor(Math.random()*3)
     return machine
@@ -75,7 +76,7 @@ let finalResult= document.querySelector('#final-result')
 
 
 buttons.forEach((button) => {
-    button.addEventListener('click', () => {
+    button.addEventListener('click', function rpsGame() {
         playerSelection = button.id;
         let round = playRound(playerSelection, computerPlay())
         results.textContent = `${round} The machine score is ${computerCounter} and your score is ${playerCounter}`;
@@ -87,4 +88,7 @@ buttons.forEach((button) => {
         }
         
     })
+    if(playerCounter>=5){
+        button.removeEventListener('click', rpsGame());
+    }
 })
