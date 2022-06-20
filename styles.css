@@ -1,5 +1,5 @@
 .jogo{
-    border: 2px solid green;
+    /* border: 2px solid green; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -8,16 +8,17 @@
 }
 
 .botoes{
-    border: 2px solid red;
+    /* border: 2px solid red; */
 }
 
 .results{
-    border: 2px solid blue;
+    /* border: 2px solid blue; */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 50px;
+    font-size: 20px;
 }
 
 button{
