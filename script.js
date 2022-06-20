@@ -1,18 +1,15 @@
 let winner = ""
 let playerCounter = 0
 let computerCounter = 0
-
-
+let playerSelection
 
 function computerPlay(){
     machine=Math.floor(Math.random()*3)
     return machine
 };
 
-let playerSelection= prompt("make your choice: ")
-
-function playRound(playerSelectionLower, computerSelection){
-    if (playerSelectionLower==="rock"){
+function playRound(playerSelection, computerSelection){
+    if (playerSelection==="rock"){
         if (computerSelection===0){
             winner = "tie";
             return ("Computer played rock. its a tie.")
@@ -25,7 +22,7 @@ function playRound(playerSelectionLower, computerSelection){
             winner= "player";
             return ("Computer played scissors. You won")
         };
-    }else if (playerSelectionLower==="paper"){
+    }else if (playerSelection==="paper"){
         if (computerSelection===0){
             winner= "player";
             return ("Computer played rock. You won.")
@@ -39,7 +36,7 @@ function playRound(playerSelectionLower, computerSelection){
 
             return ("Computer played scissors. You lost")
         };
-    }else if (playerSelectionLower==="scissors"){
+    }else if (playerSelection==="scissors"){
         if (computerSelection===0){
             winner = "computer";
             return ("Computer played rock. You lost.")
@@ -55,29 +52,11 @@ function playRound(playerSelectionLower, computerSelection){
     };
 };
 
-console.log(playRound(playerSelection, computerPlay()))
+let buttons = document.querySelectorAll('button');
 
-
-// function game(){
-//     for (i = 0; i < 5; i++){
-//         computerSelection = computerPlay();
-//         playerSelectionGeneral= prompt("Write your choice");
-//         playerSelectionLower = playerSelectionGeneral.toLowerCase();
-//         result = playRound(playerSelectionLower, computerSelection)
-
-//         if (winner==="tie"){
-//             playerCounter+=1
-//             computerCounter+=1
-
-//         };if(winner==="player"){
-//             playerCounter+=1
-
-//         };if(winner==="computer"){
-//             computerCounter+=1
-
-//         };
-//         console.log(result)
-
-//         };console.log(`The final score was ${playerCounter} points for you and ${computerCounter} points for the machine.`);
-// }
-// console.log(game())
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        playerSelection = button.id;
+        (playRound(playerSelection, computerPlay()))
+    })
+})
